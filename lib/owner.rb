@@ -28,4 +28,34 @@ class Owner
   def buy_fish(name)
     @pets[:fishes] << Fish.new(name)
   end
+
+  def buy_cat(name)
+    @pets[:cats] << Cat.new(name)
+  end
+
+  def buy_Dog(name)
+    @pets[:Dogs] << Dog.new(name)
+  end
+
+  def walk_dogs
+    @pets[:dogs].each { |x| x.mood = "happy"}
+  end
+
+  def play_with_cats
+    @pets[:cats].each { |x| x.mood = "happy"}
+  end
+
+  def feed_fish
+    @pets[:fishes].each { |x| x.mood = "happy"}
+  end
+
+  def sell_pets
+    @pets.each do |k,v|
+      v.each { |x| x.mood = "nervous" }
+    end
+  end
+
+  def list_pets
+    "I have #{@pets[:fishes].size} fish, #{@pets[:dogs].size} dog(s), and #{@pets[:cats].size} cat(s)."
+
 end
