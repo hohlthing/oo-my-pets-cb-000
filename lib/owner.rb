@@ -53,6 +53,7 @@ class Owner
     @pets.each do |k,v|
       v.each { |x| x.mood = "nervous" }
     end
+    @pets = {:fishes => [], :dogs => [], :cats => []}
   end
 
   def list_pets
